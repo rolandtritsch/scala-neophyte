@@ -1,6 +1,6 @@
 package neophyte
 
-object Part1 {
+object Part01 {
   def main(args: Array[String]): Unit = {
     val users = List(
       User("Joe", "Doe", 40),
