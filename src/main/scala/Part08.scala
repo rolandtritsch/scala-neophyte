@@ -13,6 +13,8 @@ object Part08 {
   private val WATER_COFFEE_TEMP = 85
 
   def main(args: Array[String]): Unit = {
+    require(args.size == 0, "Usage: Part08")
+
     println(s"Brewing: ${prepareCappucino().getOrElse("BOOOM - broke the machine")}")
 
     val groundedBeans = grindBeansF("baked beans")
