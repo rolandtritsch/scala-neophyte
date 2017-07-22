@@ -1,7 +1,6 @@
-package neophyte
+package neophyte.part04
 
 import scala.io.Source
-
 
 object Part04 {
   type Word = String

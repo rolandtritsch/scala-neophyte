@@ -1,10 +1,10 @@
-package neophyte
+package neophyte.part01
 
 object Part01 {
   def main(args: Array[String]): Unit = {
     val users = List(
-      User("Joe", "Doe", 40),
-      User("Roland", "Tritsch", 2)
+      EMailAddress("Joe", "Doe", 40),
+      EMailAddress("Roland", "Tritsch", 2)
     )
     println(s"Score: ${advance(users)}")
 
@@ -16,11 +16,11 @@ object Part01 {
     println(s"Greeting: ${greeting3(fuser)}")
   }
 
-  def advance(users: List[User]): Int = {
+  def advance(users: List[EMailAddress]): Int = {
     require(users.size >= 2)
 
     users match {
-      case User(_, _, score0) :: User(_, _, score1) :: _ => score0 + score1
+      case EMailAddress(_, _, score0) :: EMailAddress(_, _, score1) :: _ => score0 + score1
       case _ => 0
     }
   }
@@ -42,7 +42,7 @@ object Part01 {
   }
 }
 
-case class User(firstName: String, lastName: String, score: Int)
+case class EMailAddress(firstName: String, lastName: String, score: Int)
 
 trait BaseUser {
   val name: String

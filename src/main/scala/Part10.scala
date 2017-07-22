@@ -1,44 +1,44 @@
-package neophyte
+package neophyte.part10
 
 object Part10 {
+  val me = EMailAddress("Roland", "roland@tritsch.org")
+
+  val goodAddresses = Set(
+    me,
+    EMailAddress("Daniel", "dwestheide@gmail.com"),
+    EMailAddress("Joe", "joe@bar.com"),
+    EMailAddress("Jane", "jane@bar.com")
+  )
+
+  val badAddresses = Set(
+    EMailAddress("Foo", "foo@bar.com")
+  )
+
+  val addressBook = goodAddresses.union(badAddresses)
+
+  val inbox = Set(
+    EMail(
+      from = me,
+      to = EMailAddress("Daniel", "dwestheide@gmail.com"),
+      subject = "Awesome articles",
+      body = "Hi Daniel, thanks a lot for this. - RT"
+    ),
+    EMail(
+      EMailAddress("Daniel", "dwestheide@gmail.com"),
+      me,
+      "RE: Awesome articles",
+      "Hi Roland, thanks and you are welcome. Regards ... Daniel"
+    ),
+    EMail(
+      EMailAddress("Foo", "foo@bar.com"),
+      me,
+      "I am Nigerian Prince",
+      "Hi Roland, I need to transfer USD 10M to your back account. Can you help me? - Prince UuiyebdaS"
+    )
+  )
+
   def main(args: Array[String]): Unit = {
     require(args.size == 0, "Usage: neophyte.Part10")
-
-    val me = EMailAddress("Roland", "roland@tritsch.org")
-
-    val goodAddresses = Set(
-      me,
-      EMailAddress("Daniel", "dwestheide@gmail.com"),
-      EMailAddress("Joe", "joe@bar.com"),
-      EMailAddress("Jane", "jane@bar.com")
-    )
-
-    val badAddresses = Set(
-      EMailAddress("Foo", "foo@bar.com")
-    )
-
-    val addressBook = goodAddresses.union(badAddresses)
-
-    val inbox = Set(
-      EMail(
-        from = me,
-        to = EMailAddress("Daniel", "dwestheide@gmail.com"),
-        subject = "Awesome articles",
-        body = "Hi Daniel, thanks a lot for this. - RT"
-      ),
-      EMail(
-        EMailAddress("Daniel", "dwestheide@gmail.com"),
-        me,
-        "RE: Awesome articles",
-        "Hi Roland, thanks and you are welcome. Regards ... Daniel"
-      ),
-      EMail(
-        EMailAddress("Foo", "foo@bar.com"),
-        me,
-        "I am Nigerian Prince",
-        "Hi Roland, I need to transfer USD 10M to your back account. Can you help me? - Prince UuiyebdaS"
-      )
-    )
 
     println(filterSpam(inbox, sendByOneOf(badAddresses)))
     println(filterSpam(inbox, notSendByAnyOf(badAddresses)))

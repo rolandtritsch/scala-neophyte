@@ -1,4 +1,4 @@
-package neophyte
+package neophyte.part02
 
 object Part02 {
   def main(args: Array[String]): Unit = {

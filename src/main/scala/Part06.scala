@@ -1,4 +1,4 @@
-package neophyte
+package neophyte.part06
 
 import scala.util.Try
 

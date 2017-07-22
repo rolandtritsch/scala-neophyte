@@ -1,4 +1,4 @@
-package neophyte
+package neophyte.part08
 
 import scala.concurrent.{Await, Future}
 import scala.concurrent.ExecutionContext.Implicits.global
