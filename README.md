@@ -7,5 +7,4 @@ How to make it work ...
 * install `git` and `sbt` with a/the package manager of your choice (e.g. `brew`
 )
 * clone the repo
-* run `sbt runMain neophyte.Part01` (or any other part you like)
-
+* run `sbt runMain neophyte.part01.Part01` (or any other part you like)
