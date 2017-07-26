@@ -2,6 +2,8 @@ package neophyte.part01
 
 object Part01 {
   def main(args: Array[String]): Unit = {
+    // @todo add/fix all usage messages to reflect new package structure
+    require(args.size == 0, "Usage: neophyte.part01.Part01")
     val users = List(
       EMailAddress("Joe", "Doe", 40),
       EMailAddress("Roland", "Tritsch", 2)
