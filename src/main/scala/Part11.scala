@@ -7,7 +7,7 @@ import neophyte.part10.Part10.SpamFilter
 
 object Part11 {
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: neophyte.Part11")
+    require(args.size == 0, s"Usage: ${Part11.getClass.getName.split('$').head}")
 
     println(Part10.filterSpam(Part10.inbox, min20))
     println(Part10.filterSpam(Part10.inbox, max20))

@@ -2,7 +2,7 @@ package neophyte.part02
 
 object Part02 {
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: neophyte.Part02")
+    require(args.size == 0, "Usage: neophyte.part02.Part02")
 
     val lWithThree = (0 to 2).toList.map(_ * 10)
     val lWithMore = (0 to 9).toList.map(_ * 3)

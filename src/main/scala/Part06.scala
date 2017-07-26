@@ -3,10 +3,10 @@ package neophyte.part06
 import scala.util.Try
 
 object Part06 {
-  private final val AGE_LIMIT = 16
+  private final val AgeLimit = 16
 
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: neophyte.Part06")
+    require(args.size == 0, s"Usage: ${Part06.getClass.getName.split('$').head}")
 
     val child = new Customer(14)
     val teenager = new Customer(16)
@@ -36,12 +36,12 @@ object Part06 {
   }
 
   def buyCigarettes(customer: Customer, brand: String): Cigarettes = {
-    if(customer.age < AGE_LIMIT) throw UnderAgeException(s"Customer is under the age limit: ${customer.age}/${AGE_LIMIT}")
+    if(customer.age < AgeLimit) throw UnderAgeException(s"Customer is under the age limit: ${customer.age}/${AgeLimit}")
     else new Cigarettes(brand)
   }
 
   def buyCigarettes2(customer: Customer, brand: String): Try[Cigarettes] = Try {
-    if(customer.age < AGE_LIMIT) throw UnderAgeException(s"Customer is under the age limit: ${customer.age}/${AGE_LIMIT}")
+    if(customer.age < AgeLimit) throw UnderAgeException(s"Customer is under the age limit: ${customer.age}/${AgeLimit}")
     else new Cigarettes(brand)
   }
 }

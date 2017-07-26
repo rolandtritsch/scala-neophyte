@@ -7,7 +7,7 @@ object Part04 {
   type Frequency = Int
 
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: neophyte.Part04")
+    require(args.size == 0, s"Usage: ${Part04.getClass.getName.split('$').head}")
 
     val wordFrequencies = wordHistogram(readResourceAsListOfWords("ulysses.txt"))
     println(wordsWithoutOutliers(wordFrequencies, 10, 30).take(10))

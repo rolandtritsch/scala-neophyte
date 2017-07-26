@@ -38,7 +38,7 @@ object Part10 {
   )
 
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: neophyte.Part10")
+    require(args.size == 0, s"Usage: ${Part10.getClass.getName.split('$').head}")
 
     println(filterSpam(inbox, sendByOneOf(badAddresses)))
     println(filterSpam(inbox, notSendByAnyOf(badAddresses)))

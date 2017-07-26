@@ -2,7 +2,7 @@ package neophyte.part07
 
 object Part07 {
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: neophyte.Part07")
+    require(args.size == 0, s"Usage: ${Part07.getClass.getName.split('$').head}")
 
     val joe = Voter("joe", 10, Right(new Republican))
     val jane = Voter("jane", 20, Left(new Democrat))

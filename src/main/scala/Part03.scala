@@ -2,7 +2,7 @@ package neophyte.part03
 
 object Part03 {
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: neophyte.Part03")
+    require(args.size == 0, s"Usage: ${Part03.getClass.getName.split('$').head}")
 
     /*
     You can pattern match on ...

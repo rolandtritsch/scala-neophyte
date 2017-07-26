@@ -2,7 +2,7 @@ package neophyte.part05
 
 object Part05 {
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: neophyte.Part05")
+    require(args.size == 0, s"Usage: ${Part05.getClass.getName.split('$').head}")
 
     val greetingSome: Option[String] = Some("Hello World")
     val greetingNone: Option[String] = None

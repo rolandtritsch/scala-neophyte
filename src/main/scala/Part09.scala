@@ -7,7 +7,7 @@ import scala.concurrent.duration._
 
 object Part09 {
   def main(args: Array[String]): Unit = {
-    require(args.size == 0, "Usage: Part09")
+    require(args.size == 0, s"Usage: ${Part09.getClass.getName.split('$').head}")
 
     val taxCut = Government.redeemCampaignPledge(25)
     println("Now that they are elected, let's see if they remember their promises ...")
